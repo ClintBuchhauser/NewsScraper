@@ -28,6 +28,16 @@ app.use(express.static("public"));
 
 // Connect to the Mongo DB
 mongoose.connect("mongodb://localhost/newsscraperdb");
+// Mongo environment variable for Heroku or local
+
+var MONGODB_URI =
+  process.env.MONGODB_URI || "mongodb://localhost/newsscraperdb";
+// Set mongoose to leverage built in JavaScript ES6 Promises
+mongoose.Promise = Promise;
+// Connect to the Mongo DB
+mongoose.connect(MONGODB_URI, {
+  useMongoClient: true
+});
 
 // Routes
 
