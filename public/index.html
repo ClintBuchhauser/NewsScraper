@@ -6,15 +6,17 @@
     <style>
       body { background-color: rgb(134, 198, 241) }
       #wrapper {
-        width: 960px;
-        margin-left: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* margin-left: auto;
         margin-right: auto;
-        padding-top: 5%;
+        padding-top: 5%; */
       }
       #articles {
         display: inline-block;
         overflow: auto;
-        width: 60%;
+        width: 50%;
         height: 700px;
       }
       #notes {
@@ -34,12 +36,16 @@
         height: 200px;
         font-size: 18px;
       }
+
+      h2{
+        color: white;
+      }
     </style>
   </head>
   <body>
-    <div id="wrapper">
       <h1>News Scraper</h1>
       <h2><button class="scrape">Scrape</button></h2>
+    <div id="wrapper">
       <div class="articles"></div>
       <div id="notes"></div>
     </div>
